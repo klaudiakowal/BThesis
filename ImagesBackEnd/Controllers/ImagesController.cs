@@ -19,7 +19,7 @@ namespace ImagesBackEnd.Controllers
         [Route("GetImageForMovie/{movieId}")]
         public ActionResult GetImageForMovie(string movieId)
         {
-            return imageRepository.GetFileImage(movieId);
+            return new OkObjectResult(imageRepository.GetFileImage(movieId));
         }
       
     }

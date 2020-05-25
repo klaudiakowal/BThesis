@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using MoviePortal.Services;
 
 namespace MoviePortal.Controllers
 {
@@ -16,13 +19,13 @@ namespace MoviePortal.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly HttpClient httpClient = new HttpClient();
+        private readonly IMovieRatingService ratingService;
+        private readonly IMovieImageService imageService;
 
-        public MovieController()
+        public MovieController(IMovieRatingService ratingService, IMovieImageService imageService)
         {
-            httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("https://localhost:5003/api/rating/GetRatingForMovie/");
-
+            this.ratingService = ratingService;
+            this.imageService = imageService;
         }
       
         [HttpGet("[action]")]
@@ -33,17 +36,13 @@ namespace MoviePortal.Controllers
             return Enumerable.Range(1, 5).Select(index => new Movie
             {
                 ReleaseDate = DateTime.Now.AddDays(index).ToString("d"),
-                Rating = GetRating(rng.Next(1,7).ToString()).Result,
+                Rating = ratingService.GetRating(rng.Next(1,7).ToString()).Result,
                 Name = Names[rng.Next(Names.Length)],
-                Image = "https://localhost:5001/api/images/GetImageForMovie/"+rng.Next(1,7)
+                Image = imageService.GetImageForMovie(rng.Next(1, 7)).Result
             });
         }
 
-        private async Task<string> GetRating(string movieId)
-        {
-            var response = await httpClient.GetAsync(movieId).ConfigureAwait(false);
-            return await response.Content.ReadAsStringAsync();
-        }
+       
         public class Movie
         {
             public string ReleaseDate { get; set; }

@@ -1,0 +1,16 @@
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\appsettings.json
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.deps.json
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.runtimeconfig.json
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.runtimeconfig.dev.json
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.dll
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.pdb
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.csprojAssemblyReference.cache
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.RazorAssemblyInfo.cache
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.RazorAssemblyInfo.cs
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.AssemblyInfoInputs.cache
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.AssemblyInfo.cs
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.RazorTargetAssemblyInfo.cache
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.dll
+D:\STUDIA\Praca licencjacka\Aplikacja\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.pdb

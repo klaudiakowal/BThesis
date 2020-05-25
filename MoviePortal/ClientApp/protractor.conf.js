@@ -1,6 +1,8 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
-
+const appInsights = require("applicationinsights");
+appInsights.setup("c72ddcaa-0428-4bad-84e6-48299d84c32b");
+appInsights.start();
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {

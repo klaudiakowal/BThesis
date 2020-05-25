@@ -6,10 +6,11 @@ namespace ImagesBackEnd.Repository
 {
     public class ImageRepository : IImageRepository
     {
-        public FileStreamResult GetFileImage(string Id)
+        public string GetFileImage(string Id)
         {
             var path = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "/Images", "/", Id + ".jpg");
-            return new FileStreamResult(new FileStream(path, FileMode.Open), "image/jpeg");
+            var base64String = Convert.ToBase64String(File.ReadAllBytes(path));
+            return "data:image/jpg;base64," + base64String;
         }
     }
 }

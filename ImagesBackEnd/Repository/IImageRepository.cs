@@ -4,6 +4,6 @@ namespace ImagesBackEnd.Repository
 {
     public interface IImageRepository
     {
-        FileStreamResult GetFileImage(string Id);
+        string GetFileImage(string Id);
     }
 }
