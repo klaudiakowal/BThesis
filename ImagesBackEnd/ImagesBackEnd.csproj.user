@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>ImagesBackEnd</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>ImagesBackEnd - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
