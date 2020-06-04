@@ -1,13 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
+using MoviePortal.Services;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Security.Authentication;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
-using MoviePortal.Services;
 
 namespace MoviePortal.Controllers
 {
@@ -21,11 +18,13 @@ namespace MoviePortal.Controllers
 
         private readonly IMovieRatingService ratingService;
         private readonly IMovieImageService imageService;
+        private ILogger _logger;
 
-        public MovieController(IMovieRatingService ratingService, IMovieImageService imageService)
+        public MovieController(IMovieRatingService ratingService, IMovieImageService imageService, ILogger logger)
         {
             this.ratingService = ratingService;
             this.imageService = imageService;
+            _logger = logger;
         }
       
         [HttpGet("[action]")]

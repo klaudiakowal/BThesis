@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RatingBackEnd.Repository
 {
@@ -17,9 +18,8 @@ namespace RatingBackEnd.Repository
 
         public double GetRatingForMovie(string movieId)
         {
-            if (ratings.ContainsKey(movieId)) return ratings[movieId];
-
-            return 0;
+            if (!ratings.ContainsKey(movieId)) throw new Exception("Rating for this movie not exist");
+                return ratings[movieId];
         }
     }
 }

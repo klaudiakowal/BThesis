@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.4.0-dev-00171, )"
             }
           },
           "imports": [

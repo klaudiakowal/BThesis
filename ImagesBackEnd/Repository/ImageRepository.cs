@@ -9,8 +9,12 @@ namespace ImagesBackEnd.Repository
         public string GetFileImage(string Id)
         {
             var path = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "/Images", "/", Id + ".jpg");
+            if (!File.Exists(path)) throw new Exception("File not exist");
             var base64String = Convert.ToBase64String(File.ReadAllBytes(path));
+
+
             return "data:image/jpg;base64," + base64String;
         }
+    
     }
 }

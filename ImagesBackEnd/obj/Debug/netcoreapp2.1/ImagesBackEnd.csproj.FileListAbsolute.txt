@@ -37,7 +37,6 @@ C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\bin\Debug\netcoreapp2.1\ImagesBackE
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\bin\Debug\netcoreapp2.1\ImagesBackEnd.dll
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\bin\Debug\netcoreapp2.1\ImagesBackEnd.pdb
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.csprojAssemblyReference.cache
-C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.csproj.CoreCompileInputs.cache
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.RazorAssemblyInfo.cache
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.RazorAssemblyInfo.cs
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.AssemblyInfoInputs.cache
@@ -46,3 +45,4 @@ C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackE
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.dll
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.pdb
 C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.genruntimeconfig.cache
+C:\moje_rzeczy\BThesis\BThesis\ImagesBackEnd\obj\Debug\netcoreapp2.1\ImagesBackEnd.csproj.CoreCompileInputs.cache

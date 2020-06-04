@@ -23,7 +23,6 @@ C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackE
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.dll
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\bin\Debug\netcoreapp2.1\RatingBackEnd.pdb
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.csprojAssemblyReference.cache
-C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.csproj.CoreCompileInputs.cache
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.RazorAssemblyInfo.cache
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.RazorAssemblyInfo.cs
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.AssemblyInfoInputs.cache
@@ -32,3 +31,4 @@ C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackE
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.dll
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.pdb
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.genruntimeconfig.cache
+C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.csproj.CoreCompileInputs.cache
