@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 
 namespace MoviePortal.Controllers
 {
@@ -21,6 +22,7 @@ namespace MoviePortal.Controllers
         private readonly IMovieRatingService ratingService;
         private readonly IMovieImageService imageService;
         private ILogger _logger;
+        private TelemetryClient telemetryClient;
 
         public MovieController(IMovieRatingService ratingService, IMovieImageService imageService, ILogger logger)
         {
@@ -32,15 +34,17 @@ namespace MoviePortal.Controllers
         [HttpGet("[action]")]
         public async Task<IEnumerable<Movie>> GetAllMovies()
         {
+            var operation = telemetryClient.StartOperation<DependencyTelemetry>("Get all movie operation");
             var rng = new Random();
-          
-            return Enumerable.Range(1, 5).Select(index => new Movie
+            var result = Enumerable.Range(1, 5).Select(index => new Movie
             {
                 ReleaseDate = DateTime.Now.AddDays(index).ToString("d"),
-                Rating = ratingService.GetRating(rng.Next(1,7).ToString()).Result,
+                Rating = ratingService.GetRating(rng.Next(1, 7).ToString()).Result,
                 Name = Names[rng.Next(Names.Length)],
                 Image = imageService.GetImageForMovie(rng.Next(1, 7)).Result
             });
+            telemetryClient.StopOperation<DependencyTelemetry>(operation);
+            return result;
         }
 
        
