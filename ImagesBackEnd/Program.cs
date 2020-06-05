@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Serilog;
@@ -9,6 +10,7 @@ namespace ImagesBackEnd
     {
         public static void Main(string[] args)
         {
+            TelemetryClient telemetryClient = new TelemetryClient();
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
@@ -22,6 +24,8 @@ namespace ImagesBackEnd
             catch (Exception ex)
             {
                 Log.Fatal(ex, "Application Images Backend Service start-up failed");
+                telemetryClient.TrackException(ex);
+
             }
             finally
             {

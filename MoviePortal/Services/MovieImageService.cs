@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights;
 using Serilog;
 
 namespace MoviePortal.Services
@@ -11,6 +12,7 @@ namespace MoviePortal.Services
     public class MovieImageService: IMovieImageService
     {
         private HttpClient _httpClient;
+        TelemetryClient telemetryClient = new TelemetryClient();
         private readonly ILogger _logger;
         public MovieImageService(HttpClient httpClient, ILogger logger)
         {

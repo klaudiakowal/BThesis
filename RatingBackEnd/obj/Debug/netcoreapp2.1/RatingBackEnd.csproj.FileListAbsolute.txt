@@ -31,4 +31,3 @@ C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackE
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.dll
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.pdb
 C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.genruntimeconfig.cache
-C:\moje_rzeczy\BThesis\BThesis\RatingBackEnd\obj\Debug\netcoreapp2.1\RatingBackEnd.csproj.CoreCompileInputs.cache

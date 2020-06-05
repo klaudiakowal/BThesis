@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using RatingBackEnd.Repository;
@@ -11,6 +12,7 @@ namespace RatingBackEnd.Controllers
     {
         private readonly IRatingRepository ratingRepository;
         private ILogger _logger;
+        TelemetryClient telemetryClient = new TelemetryClient();
 
         public RatingController(IRatingRepository ratingRepository, ILogger logger)
         {
@@ -28,9 +30,11 @@ namespace RatingBackEnd.Controllers
                 var result = ratingRepository.GetRatingForMovie(movieId);
                 return new OkObjectResult(result);
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                _logger.Error(exception.Message);
+                _logger.Error(ex.Message);
+                telemetryClient.TrackException(ex);
+
             }
             return new NotFoundResult();
         }
