@@ -24,7 +24,8 @@ namespace ImagesBackEnd
             services.AddMvc();
             services.AddSingleton(Log.Logger);
             services.AddSingleton<IImageRepository, ImageRepository>();
-           
+            services.AddApplicationInsightsTelemetry();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

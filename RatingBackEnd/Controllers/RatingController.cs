@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using RatingBackEnd.Repository;
@@ -12,12 +13,13 @@ namespace RatingBackEnd.Controllers
     {
         private readonly IRatingRepository ratingRepository;
         private ILogger _logger;
-        TelemetryClient telemetryClient = new TelemetryClient();
+        private TelemetryClient telemetryClient;
 
-        public RatingController(IRatingRepository ratingRepository, ILogger logger)
+        public RatingController(IRatingRepository ratingRepository, ILogger logger, TelemetryClient telemetry)
         {
             this.ratingRepository = ratingRepository;
             _logger = logger;
+            telemetryClient = telemetry;
         }
 
         // GET api/rating/GetRatingForMovie/5
@@ -25,8 +27,10 @@ namespace RatingBackEnd.Controllers
         [Route("GetRatingForMovie/{movieId}")]
         public ActionResult<double> GetRatingForMovie(string movieId)
         {
+            var operation = telemetryClient.StartOperation<DependencyTelemetry>("GetRatingForMovie-operation");
             try
             {
+                
                 var result = ratingRepository.GetRatingForMovie(movieId);
                 return new OkObjectResult(result);
             }
@@ -34,8 +38,9 @@ namespace RatingBackEnd.Controllers
             {
                 _logger.Error(ex.Message);
                 telemetryClient.TrackException(ex);
-
             }
+
+            telemetryClient.StopOperation(operation);
             return new NotFoundResult();
         }
     }

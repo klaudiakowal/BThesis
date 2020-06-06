@@ -24,30 +24,42 @@ namespace MoviePortal.Controllers
         private ILogger _logger;
         private TelemetryClient telemetryClient;
 
-        public MovieController(IMovieRatingService ratingService, IMovieImageService imageService, ILogger logger)
+        public MovieController(IMovieRatingService ratingService, IMovieImageService imageService, ILogger logger, TelemetryClient telemetry)
         {
             this.ratingService = ratingService;
             this.imageService = imageService;
             _logger = logger;
+            telemetryClient = telemetry;
         }
       
         [HttpGet("[action]")]
         public async Task<IEnumerable<Movie>> GetAllMovies()
         {
-            var operation = telemetryClient.StartOperation<DependencyTelemetry>("Get all movie operation");
+            var operation = telemetryClient.StartOperation<DependencyTelemetry>("GetAllMovies-operation");
+            var listOfTasks = new List<Task<Movie>>();
+            for(var i = 0; i <5;i++)
+            {
+                listOfTasks.Add(GetMovieAsync(i));
+            }
+            var results = await Task.WhenAll(listOfTasks);
+            telemetryClient.StopOperation<DependencyTelemetry>(operation);
+            return results;
+        }
+
+        public async Task<Movie> GetMovieAsync(int index)
+        {
             var rng = new Random();
-            var result = Enumerable.Range(1, 5).Select(index => new Movie
+            var result = new Movie
             {
                 ReleaseDate = DateTime.Now.AddDays(index).ToString("d"),
-                Rating = ratingService.GetRating(rng.Next(1, 7).ToString()).Result,
+                Rating = await ratingService.GetRating(rng.Next(1, 7).ToString()),
                 Name = Names[rng.Next(Names.Length)],
-                Image = imageService.GetImageForMovie(rng.Next(1, 7)).Result
-            });
-            telemetryClient.StopOperation<DependencyTelemetry>(operation);
+                Image = await imageService.GetImageForMovie(rng.Next(1, 7))
+            };
             return result;
         }
 
-       
+
         public class Movie
         {
             public string ReleaseDate { get; set; }

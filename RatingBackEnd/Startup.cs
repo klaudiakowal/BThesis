@@ -30,6 +30,7 @@ namespace RatingBackEnd
             services.AddSingleton(Log.Logger);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IRatingRepository, RatingRepository>();
+            services.AddApplicationInsightsTelemetry();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

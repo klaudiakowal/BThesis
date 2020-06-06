@@ -1,6 +1,7 @@
 ﻿using System;
 using ImagesBackEnd.Repository;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
@@ -12,11 +13,12 @@ namespace ImagesBackEnd.Controllers
     {
         private readonly IImageRepository imageRepository;
         private readonly ILogger _logger;
-
-        public ImagesController(IImageRepository imageRepository, ILogger logger)
+        private TelemetryClient telemetryClient;
+        public ImagesController(IImageRepository imageRepository, ILogger logger, TelemetryClient telemetry)
         {
             this.imageRepository = imageRepository;
             _logger = logger;
+            telemetryClient = telemetry;
         }
 
         // GET api/images/GetImageForMovie/5
@@ -33,7 +35,6 @@ namespace ImagesBackEnd.Controllers
             {
                 _logger.Error(ex.Message);
             }
-
             return new NotFoundResult();
         }
 
