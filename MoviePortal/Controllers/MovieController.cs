@@ -16,7 +16,7 @@ namespace MoviePortal.Controllers
 
         private static string[] Names = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Inception", "Bad Boys", "Avatar", "Dunkirk", "Titanic", "Interstellar", "The Dark Knight", "The Godfather", "The Silence of the Lambs", "The Green Mile"
         };
 
         private readonly IMovieRatingService ratingService;
@@ -36,6 +36,7 @@ namespace MoviePortal.Controllers
         public async Task<IEnumerable<Movie>> GetAllMovies()
         {
             var operation = telemetryClient.StartOperation<DependencyTelemetry>("GetAllMovies-operation");
+
             var listOfTasks = new List<Task<Movie>>();
             for(var i = 0; i <5;i++)
             {
