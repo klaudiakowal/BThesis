@@ -25,6 +25,8 @@ namespace MoviePortal.Services
         public async Task<string> GetRating(string movieId)
         {
             var operation = telemetryClient.StartOperation<DependencyTelemetry>("GetRatingForMovie-operation");
+            telemetryClient.TrackEvent("GetRatingForMovie");
+            telemetryClient.TrackTrace("GetRatingForMovie");
             _logger.Information($"Getting rating for movie {movieId}");
             var result = await _httpClient.GetAsync($"https://ratingbackend.azurewebsites.net/api/rating/GetRatingForMovie/{movieId}").ConfigureAwait(false);
             var content = await result.Content.ReadAsStringAsync();
